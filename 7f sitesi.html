@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7/F Sınıfı Galerisi</title>
+<style>
+  /* Genel */
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f3eee7;
+    color: #3e2f1c;
+    background-image: url('tahta-deseni.jpg'); /* Tahta deseni görseli */
+    background-size: cover;
+    background-repeat: repeat;
+  }
+
+  /* Üst Menü */
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(107,66,38,0.95);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  nav a:hover {
+    color: #f9f5f0;
+    text-shadow: 0 0 8px #fff;
+  }
+
+  header {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 2px 2px 5px #3e2f1c;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .gallery img, .gallery video {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .gallery img:hover, .gallery video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  }
+
+  /* Popup */
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+  }
+  .popup img, .popup video {
+    max-width: 90%; max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.4);
+  }
+  .popup:target { display: flex; }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(107,66,38,0.95);
+    color: #fff;
+    border-top: 4px solid #a67b5b;
+  }
+
+  /* Responsive Menü (telefon) */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+    }
+    nav a {
+      margin: 10px 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#">Anasayfa</a>
+  <a href="#galeri">Galeri</a>
+  <a href="#videolar">Videolar</a>
+  <a href="#hakkimizda">Hakkımızda</a>
+</nav>
+
+<header>📸 7/F SINIFI GALERİSİ 📸</header>
+
+<!-- Galeri Bölümü -->
+<div class="gallery" id="galeri">
+  <a href="#img1"><img="resim1jpeg" alt="Fotoğraf 1"></a>
+  <a href="#img2"><img="resim2jpeg" alt="Fotoğraf 2"></a>
+  <a href="#img3"><img="resim3jpeg" alt="Fotoğraf 3"></a>
+
+  <!-- Video -->
+  <a href="#video1">
+    <video muted>
+      <source src="video1.mp4" type="video/mp4">
+    </video>
+  </a>
+  <a href="#video2">
+    <video muted>
+      <source src="video2.mp4" type="video/mp4">
+    </video>
+  </a>
+</div>
+
+<!-- Popup Resimler -->
+<div id="img1" class="popup"><a href="#"><img src="resim1.jpg"></a></div>
+<div id="img2" class="popup"><a href="#"><img src="resim2.jpg"></a></div>
+<div id="img3" class="popup"><a href="#"><img src="resim3.jpg"></a></div>
+
+<!-- Popup Videolar -->
+<div id="video1" class="popup"><a href="#"><video controls autoplay><source src="video1.mp4" type="video/mp4"></video></a></div>
+<div id="video2" class="popup"><a href="#"><video controls autoplay><source src="video2.mp4" type="video/mp4"></video></a></div>
+
+<!-- Hakkımızda Bölümü -->
+<section id="hakkimizda" style="max-width:800px;margin:auto;padding:40px;text-align:center;color:#3e2f1c;background-color:rgba(255,255,255,0.85);border-radius:12px;">
+  <h2>Hakkımızda</h2>
+  <p>7/F sınıfı olarak eğlenceli ve unutulmaz anılarımızı burada paylaşıyoruz.  
+  Resimler, videolar ve editler ile sınıfımızın özel anlarını görebilirsiniz!</p>
+</section>
+
+<footer>© 2025 7/F Sınıfı | Tasarım: Beyazıt & ChatGPT ☕</footer>
+
+</body>
+</html>
